@@ -5,7 +5,7 @@ import plotly.graph_objs as go
 
 # data sets
 from africa_list import african_countries 
-data = pd.read_csv('data\combined_df')
+data = pd.read_csv('combined_df')
 
 
 app_ui = ui.page_fluid(
