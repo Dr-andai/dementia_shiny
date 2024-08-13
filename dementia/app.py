@@ -2,6 +2,8 @@ import pandas as pd
 from shiny import App, Inputs, Outputs, Session, render, ui
 from shinywidgets import output_widget, render_widget
 import plotly.graph_objs as go
+import plotly.io as pio
+pio.templates
 
 # data sets
 from africa_list import african_countries 
@@ -33,6 +35,11 @@ def server(input: Inputs, output: Outputs, session: Session):
                                      y=df[variable], 
                                      mode='lines', 
                                      name=f"{variable}"))
+            fig.update_layout(template='simple_white',
+                               font=dict(size=14),
+                               title_font=dict(size=20))
         return fig
+
+        
 
 app = App(app_ui, server)
